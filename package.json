@@ -5,5 +5,14 @@
   "main": "server.js",
   "repository": "git@github.com-personal:CallmeTorre/recipes-api.git",
   "author": "Alexis Torreblanca <alexis_torreblanca@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
