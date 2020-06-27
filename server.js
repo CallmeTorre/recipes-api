@@ -1,11 +1,15 @@
-require('dotenv').config()
-const logger = require('./configuration/logger.js')
+const logger = require('./configuration/logger.js');
+const loggerMiddleware = require('./middlewares/logger.js');
+const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const express = require('express');
 const cors = require('cors');
 const app = express();
 
+dotenv.config();
+
 app.use(cors());
+app.use(loggerMiddleware);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
