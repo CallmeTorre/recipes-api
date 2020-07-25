@@ -5,11 +5,9 @@ const getRecipes = async (req, res) => {
   const client = await pool.connect();
   const queryText =
     "SELECT nombre, ingredientes, pasos, tiempo_estimado, tipo, origen FROM recipes";
-
   try {
     await client.query("BEGIN");
-    const recipes = await client.query(queryText);
-    res.status(200).json(recipes.rows);
+    res.status(200).json(await client.query(queryText));
     await client.query("COMMIT");
   } catch (err) {
     logger.error("Unexpected error: ", err);
