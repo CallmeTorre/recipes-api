@@ -7,7 +7,8 @@
   "author": "Alexis Torreblanca <alexis_torreblanca@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --watch server.js"
+    "dev": "nodemon --watch server.js",
+    "eslint-init": "eslint --init"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -18,6 +19,13 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "nodemon": "^2.0.4"
   }
 }

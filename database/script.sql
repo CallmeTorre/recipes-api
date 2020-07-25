@@ -27,7 +27,7 @@ CREATE TABLE accounts(
 );
 
 CREATE TABLE recipes(
-    id uuid PRIMARY KEY DEFAULT uuid_generate_v4()
+    id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
     nombre VARCHAR(255) NOT NULL,
     ingredientes TEXT[] NOT NULL,
     pasos TEXT[] NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE saved_recipes(
     account_id uuid NOT NULL,
     recipe_id uuid NOT NULL,
     fecha_creacion timestamp without time zone DEFAULT (now())::timestamp without time zone NOT NULL,
-    PRIMARY KEY (account_id, recipe_id)
+    PRIMARY KEY (account_id, recipe_id),
     FOREIGN KEY (account_id) REFERENCES accounts (id) ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY (recipe_id) REFERENCES recipes (id) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (recipe_id) REFERENCES recipes (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
