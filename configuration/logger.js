@@ -2,6 +2,7 @@
 // * Store logs in a file.
 //      * Divide logs by type in different files.
 // * Use Mexico Timestamp.
+// * Implement morgan to log http requests.
 const winston = require("winston");
 
 const loggerFormat = winston.format.combine(
